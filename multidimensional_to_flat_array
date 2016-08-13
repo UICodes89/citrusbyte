@@ -1,0 +1,14 @@
+function solve(arr){
+   arr.forEach(function(data){
+     if(typeof(data)=="object"){
+        solve(data);
+      }else{
+       solve.newlist.push(data);
+      }
+   });
+  return solve.newlist;
+   
+}
+solve.newlist =[];
+var arr = [[1, [[6], 7]], 2, 3];
+console.log(solve(arr));//[1, 6, 7, 2, 3]
